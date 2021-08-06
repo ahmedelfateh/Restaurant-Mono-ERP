@@ -1,0 +1,33 @@
+version: "3"
+
+volumes:
+  postgres_data: {}
+
+services:
+  django:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: restaurant_django
+    container_name: restaurant_django
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app:z
+    environment:
+      USE_DOCKER: "yes"
+      IPYTHONDIR: /app/.ipython
+      POSTGRES_USER: api
+      POSTGRES_PASSWORD: api
+    ports:
+      - "8000:8000"
+    command: /start-app.sh
+
+  postgres:
+    image: postgres:12.3
+    container_name: restaurants_postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data:Z
+    environment:
+      POSTGRES_USER: api
+      POSTGRES_PASSWORD: api
