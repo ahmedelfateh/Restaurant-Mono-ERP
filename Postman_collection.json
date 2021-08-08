@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "91034dd6-7e28-430c-8c3f-b5115b5bad8c",
+		"name": "Resturant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "http://localhost:8000/users/create/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4Mjg0MTU4LCJqdGkiOiJmMDQ1MDZhMTkxOGI0Y2FkOTE2NTIxMDE5ODljN2MzNCIsInVzZXJfaWQiOjQyfQ.2fwu0TFYjfnUL0ArtblUuxmUZtldEJ6nGjpSwiwfR_A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Ahmed\",\n    \"employee_number\":1087,\n    \"role\":\"ADMIN\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/users/login/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4MjczNDc3LCJqdGkiOiJmYTk3MjQ3NzcyZWQ0NWU5OGJiMjI3MDM0OTBhYTdhOCIsInVzZXJfaWQiOjU3fQ.eZPwK25lKQOcw_Z7RMYwwpBagKoPzVh14AhG38GHPsw",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employee_number\":1087,\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/users/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurants",
+			"item": [
+				{
+					"name": "http://localhost:8000/restaurants/create-table/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4MzcyODM2LCJqdGkiOiJiOTNlYzJjYmI2MWE0YTJjYjAxOWIxMDY3OGJhM2QyYSIsInVzZXJfaWQiOjF9.1dDMaK11hykImidfVUGc0MAd6kS7QqBeTKENI3-Dx-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 1,\n    \"seats\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/tables/create/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"tables",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/create-table/ Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4NDA5MzY5LCJqdGkiOiJhMGU4MjVhYjM0NjM0ZDYyOWY1OTk4MTc4MDRiY2EzMCIsInVzZXJfaWQiOjF9.lrKGR5nDlr6IruwGIqddfnzpy33KYcQssKwE6SMUG6o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 1,\n    \"seats\": 12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/tables/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"tables",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/tables/<id>/delete/",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4NDM0OTk2LCJqdGkiOiJiZGIwMmIyYzJlNzU0MmJhYmM0MWQzNmVlZjJlNzZlYSIsInVzZXJfaWQiOjF9.UaU5mty8YbhlzW0tduye-wYdWBaA5Z8FNnDeHJnykSI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/tables/2/delete/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"tables",
+								"2",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/reservations/table/<id>/create/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4MzcyODM2LCJqdGkiOiJiOTNlYzJjYmI2MWE0YTJjYjAxOWIxMDY3OGJhM2QyYSIsInVzZXJfaWQiOjF9.1dDMaK11hykImidfVUGc0MAd6kS7QqBeTKENI3-Dx-0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start\":\"01:00:00\",\n    \"end\":\"20:00:00\",\n    \"date\":\"2021-08-07\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/reservations/table/1/create/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"reservations",
+								"table",
+								"1",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/reservations/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4NDEwMjQ1LCJqdGkiOiJkZmVkYjYyMjg0NDY0NzE2OGY5YjAzMzgzZTM0YmJhNiIsInVzZXJfaWQiOjF9.eRzYc2V1qO50WhvU0PP5FHC0F_VKJD2l7SGXf24WsMk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start\":\"01:00:00\",\n    \"end\":\"20:00:00\",\n    \"date\":\"2021-08-07\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/reservations/?table=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"reservations",
+								""
+							],
+							"query": [
+								{
+									"key": "table",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/reservations/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4NDExMTE0LCJqdGkiOiJjZDZiZmM5OWE4MTQ0NmM5YWIxN2U3ZmUyMmE4Yzc3MyIsInVzZXJfaWQiOjF9.clPd5h-pOTsGSK-YGyN6zlNDmOkcIZEefMxnuQpQako",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/reservations/?start_date=2021-08-05&end_date=2021-08-06",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"reservations",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2021-08-05"
+								},
+								{
+									"key": "end_date",
+									"value": "2021-08-06"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/reservations/today/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4NDEyMDg4LCJqdGkiOiJmYjE3ZWQwOWFjZWU0ZjQwODg1YTQ2Y2E3ZjA5ZmU2MiIsInVzZXJfaWQiOjF9.yk1pVSpnmk8Wakpwf-Yq7q9ik4Ovc2uG5psB4XtX9tM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/reservations/today/?order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"reservations",
+								"today",
+								""
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8000/restaurants/reservations/<id>/delete/",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjI4NDM0OTk2LCJqdGkiOiJiZGIwMmIyYzJlNzU0MmJhYmM0MWQzNmVlZjJlNzZlYSIsInVzZXJfaWQiOjF9.UaU5mty8YbhlzW0tduye-wYdWBaA5Z8FNnDeHJnykSI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/restaurants/reservations/3/delete/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"restaurants",
+								"reservations",
+								"3",
+								"delete",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

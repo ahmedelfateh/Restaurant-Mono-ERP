@@ -1,18 +1,13 @@
-from rest_framework import response, status, views, generics
-from rest_framework import permissions
+from rest_framework import response, status, views
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
+from app.utils.rest_perm import AdminAccess
 from app.users.models import User
 from app.users.serializers import (
     RegisterSerializer,
     LoginSerializer,
     UserSerializer,
 )
-
-
-class AdminAccess(permissions.BasePermission):
-    def has_permission(self, request, view):
-        return request.user.is_admin()
 
 
 class CreateUserView(views.APIView):
