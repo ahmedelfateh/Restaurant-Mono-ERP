@@ -1,19 +1,25 @@
 import factory
+import factory.fuzzy
+import random
 from factory import Faker
 from factory.django import DjangoModelFactory
-from django.contrib.auth import get_user_model
-from django.db.models.signals import post_save
+from app.users.models import User
 
 
-@factory.django.mute_signals(post_save)
+def generate_employee_number():
+    return random.randint(1111, 9999)
+
+
 class UserFactory(DjangoModelFactory):
     """[summary]
     Create fake user for test
     """
 
-    email = Faker("email")
-    password = Faker("password")
+    name = factory.Sequence(lambda n: "user {0}".format(n))
+    employee_number = generate_employee_number()
+    role = factory.fuzzy.FuzzyChoice(User.ROLE_CHOICES)
+    password = factory.PostGenerationMethodCall("set_password", "password")
 
     class Meta:
-        model = get_user_model()
-        django_get_or_create = ["email"]
+        model = User
+        django_get_or_create = ["employee_number"]

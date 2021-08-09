@@ -1,15 +1,19 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
 from django.views import defaults as default_views
 
-urlpatterns = [
-    path("api-auth/", include("rest_framework.urls")),
-    path(settings.ADMIN_URL, admin.site.urls),
+api_urlpatterns = [
     # User management
     path("users/", include("app.users.urls", namespace="users")),
+    # Restaurant management
     path("restaurants/", include("app.restaurants.urls", namespace="restaurants")),
+]
+
+urlpatterns = [
+    path(settings.ADMIN_URL, admin.site.urls),
+    re_path(r"^api/", include(api_urlpatterns)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

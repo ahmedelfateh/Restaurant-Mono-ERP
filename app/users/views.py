@@ -52,11 +52,11 @@ class LoginView(views.APIView):
 
         employee_number = data.get("employee_number")
         user = User.objects.get(employee_number=employee_number)
-
+        token = user.get_token()
         return response.Response(
             {
                 "status": "success",
-                "access_token": user.get_token(),
+                "access_token": token["access"],
                 "user": UserSerializer(user).data,
             },
             status=status.HTTP_200_OK,

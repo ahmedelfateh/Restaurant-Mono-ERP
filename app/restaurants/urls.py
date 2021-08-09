@@ -8,6 +8,7 @@ from app.restaurants.views import (
     ListReservationAdminAPIView,
     ListTodayReservationAPIView,
     DeleteReservationAPIView,
+    GetAvilableReservationSlotsAPIView,
 )
 
 
@@ -23,4 +24,5 @@ urlpatterns = [
     path("reservations/today/", ListTodayReservationAPIView.as_view()),
     path("reservations/", ListReservationAdminAPIView.as_view()),
     path("reservations/<int:id>/delete/", DeleteReservationAPIView.as_view()),
+    path("reservations/slots/", GetAvilableReservationSlotsAPIView.as_view()),
 ]

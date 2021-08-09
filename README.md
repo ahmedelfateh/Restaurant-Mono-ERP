@@ -1,4 +1,4 @@
-<h1 align="center"> Events 🎊 </h1>
+<h1 align="center"> Restaurants 🛖 </h1>
 
 <p align="center">
 <a href="https://github.com/pydanny/cookiecutter-django/">
@@ -27,8 +27,8 @@ Moved to [settings](http://cookiecutter-django.readthedocs.io/en/latest/settings
 3. Run the Development environment:
 
 ```bash
-    git clone https://github.com/ahmedelfateh/event_app.git
-    cd event_app
+    git clone https://github.com/ahmedelfateh/Restaurant-Mono-ERP.git
+    cd Restaurant-Mono-ERP
     docker-compose up --build
 ```
 
@@ -56,14 +56,6 @@ For convenience, you can keep your normal user logged in on Chrome and your supe
     docker-compose run --rm django ./manage.py makemigrations
 ```
 
-### Type checks
-
-Running type checks with mypy:
-
-```bash
-    docker-compose run --rm django mypy app
-```
-
 ### Test coverage
 
 To run the tests, check your test coverage, and generate an HTML coverage report::
@@ -79,29 +71,10 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 - Run tests, for all app:
 
 ```bash
-    docker-compose run --rm django pytest
-```
-
-- Run test for specific app:
-
-```bash
-    docker-compose run --rm django pytest **...specify_app...**
-    docker-compose run --rm django pytest app/users/tests
+    docker-compose run --rm django ./manage.py test --debug-mode
 ```
 
 ## Access App
 
-- you can access the App on [Home](http://localhost:8000/)
-- you can access the App Admin on [Admin](http://localhost:8000/admin)
-
-## Deployment
-
-The following details how to deploy this application.
-
-### Heroku
-
-See detailed [cookiecutter-django Heroku documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-on-heroku.html).
-
-### Docker
-
-See detailed [cookiecutter-django Docker documentation](http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html).
+- you can access the App Admin on [Admin](http://localhost:8000/admin/)
+- you can access the App API on [API](http://localhost:8000/api/)
